@@ -24,7 +24,7 @@ export const partial = function(fn, ...argsBound) {
  * 
  * Async thunk
  *  Only difference between sync and async thunk, is that async ones accept callback as param, as shown in below example
- *  We can see that async thunks forms the core idealogy, behind promises 
+ *  We can see that async thunks forms the conceptual basis of promises 
  */
 function addAsync(x, y, cb) {
     setTimeout(() => {
