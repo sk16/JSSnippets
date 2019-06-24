@@ -3,7 +3,7 @@
   e.g. node v12.2.0: node --experimental-modules curry.js
       node v10.15.3: node --experimental-modules curry.mjs (all js modules should have 'mjs' ext)
 */
-import partial from './partial.js';
+import { partial } from './partial.js';
 
 
 export default function curry(func) {
@@ -11,6 +11,13 @@ export default function curry(func) {
     if (args.length < func.length) {
       return partial(curried, ...args);
     }
-    return func.call(this, ...args);
+    return func.apply(null, [...args]);
   };
 }
+
+function add(x, y, z) {
+  return x + y + z;
+}
+
+const addCurry = curry(add);
+console.log(addCurry(10)(20)(30));
