@@ -1,4 +1,8 @@
-export const partial = function(fn, ...argsBound) {
+/***
+ * NOTE: partial(fn, ...args) === fn.bind(null, ...args)
+ */
+
+export default function partial(fn, ...argsBound) {
     return function (...args) { //this returned function acts like a thunk
         return fn.apply(null, [...argsBound, ...args]);
     }
