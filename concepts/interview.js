@@ -275,7 +275,7 @@ function add(...args1) {
 console.log(add(1)(2)(3)(10));  // 16  
 console.log(add(1)(2,3)(10));   // 16   
 console.log(add(1,2,3)(10));    // 16   
-
+ 
 */
 
 /*=================TODOs==================
